@@ -1,0 +1,59 @@
+I<html>
+<head>
+    <style>
+	body {
+	    font-family: Arial, sans-serif;
+	    text-align: center;
+	}
+
+	input {
+	    width: 100px;
+	    margin: 10px;
+	}
+
+	button {
+	    width: 200px;
+	    height: 50px;
+	    font-size: 20px;
+	    background-color: #4CAF50;
+	    color: white;
+	    border: none;
+	    cursor: pointer;
+	}
+
+	p {
+	    font-size: 30px;
+	    color: #333;
+	}
+    </style>
+</head>
+<body>
+    <h1>حساب درجه الاعفاء العالم</h1>
+    <input id="num1" type="number" placeholder="درجة الفصل الاول">
+    <input id="num2" type="number" placeholder="درجه النصف السنة">
+    <input id="num3" type="number" placeholder="توقع درجة الفصل الثاني !!!">
+    <button id="calc" onclick="calculate()">احسب</button>
+    <p id="result"></p>
+    <script>
+	function calculate() {
+	    // get the input values
+	    var num1 = Number(document.getElementById("num1").value);
+	    var num2 = Number(document.getElementById("num2").value);
+	    var num3 = Number(document.getElementById("num3").value);
+
+	    // calculate the average
+	    var avg = (num1 + num2 + num3) / 3;
+
+	    // display the result
+    var result = document.getElementById("result");
+	    if (avg >= 90) {
+		result.innerHTML = "سوف تنعفي اعفاء فردي!";
+	    } else if (avg >= 75) {
+		result.innerHTML = "سوف تنعفي اعفاء عام!";
+	    } else {
+		result.innerHTML = "ما راح تنعفي للاسف ;(";
+	    }
+	}
+    </script>
+</body>
+</html>
